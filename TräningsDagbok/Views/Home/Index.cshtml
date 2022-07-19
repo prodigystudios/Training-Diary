@@ -1,0 +1,21 @@
+﻿
+<head>
+    @{
+    ViewData["Title"] = "Home Page";
+    }
+    <link rel="stylesheet" href="~/css/Index.css" type="text/css" />
+    
+</head>
+<div class="text-center">
+    <h1 class="display-4">Välkommen till tränings dagboken!</h1>
+    
+    <input class="Button" type='button' value='Skapa nytt inlägg' id='myButton' onClick='redirectOnClick()' />
+    
+<script>
+
+function redirectOnClick(){
+    document.location ='Dagbok/Create';
+}
+
+</script>
+</div>

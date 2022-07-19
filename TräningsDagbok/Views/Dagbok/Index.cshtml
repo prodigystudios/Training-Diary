@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TräningsDagbok.Models.Exersice>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Dagbok Övningar</h1>
+
+<p>
+    <a asp-action="Create">Skapa nytt inlägg</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>                
+                @Html.DisplayNameFor(model => model.exersice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.exersice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @*@Html.ActionLink("Välj", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                @Html.ActionLink("Ta bort övning", "Delete", new { id=item.id})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
